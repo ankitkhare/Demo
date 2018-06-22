@@ -101,6 +101,8 @@ public class HomeActivity extends AppCompatActivity implements HomeMVPContract.V
 
     @Override
     public void onEmptyResults(String query) {
+         mItems.clear();
+        adapter.notifyDataSetChanged();
         mBinding.emptyMessage.setVisibility(View.VISIBLE);
         mBinding.emptyMessage.setText(R.string.no_data_available);
     }
